@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+10.times do
+  bull_shits = []
+  50.times do
+    bull_shits << Faker::Company.bs
+  end
+  Article.create(title: Faker::Company.catch_phrase, content: bull_shits.join())
+end

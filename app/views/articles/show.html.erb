@@ -1,0 +1,16 @@
+<article>
+  <h1> <%= @article.title %>
+    <small>
+      <%= link_to edit_article_path(@article) do %>
+          <i class="fas fa-pen"></i>
+      <% end %>
+      <%= link_to article_path(@article), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </small>
+  </h1>
+  <img src="http://lorempixel.com/800/300/city/" alt="some image">
+  <p> <%= @article.markdown_content.html_safe  %></p>
+</article>
+
+
